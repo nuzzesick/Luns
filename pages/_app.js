@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import '../styles/luns.css';
+import MenuBar from '../components/MenuBar';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const Luns = ({ Component, pageProps }) => {
+  return (
+    <>
+      <MenuBar />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default Luns

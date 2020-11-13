@@ -2,14 +2,22 @@
   "name": "luns",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently --kill-others \"next dev\" \"electron .\"",
     "build": "next build",
-    "start": "next start"
+    "start": "concurrently --kill-others \"next start\" \"electron .\"",
+    "electron": "electron ."
   },
   "dependencies": {
     "next": "10.0.1",
+    "path": "^0.12.7",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "webtorrent": "^0.110.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "electron": "^10.1.5"
   }
 }
